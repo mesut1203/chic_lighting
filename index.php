@@ -52,7 +52,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="shop.php">Shop</a>
                         </li>
+
                         <li class="nav-item">
+<<<<<<< HEAD
                             <a class="nav-link" href="#">Blog</a>
                         </li>
 
@@ -78,6 +80,18 @@
                                 echo  "</li>";
                             }
                         ?>
+=======
+                            <a class="nav-link" href="#">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="cart.html">
+                                <i class="fas fa-solid fa-cart-shopping"></i>
+                            </a>
+                            <a href="register.html">
+                                <i class="fas fa-solid fa-user"></i>
+                            </a>
+                        </li>
+>>>>>>> 4eaf9810485b9a7f34d11ec87a02c0730414b423
                     </ul>
                 </div>
             </div>
@@ -261,50 +275,259 @@
                 <button class="text-uppercase">shop now</button>
             </div>
         </section>
-        
 
-        
-
-        <!--lamp-->
-        <?php 
-            require 'server\connection.php';
-            $sql = 'SELECT `id`, `category_id`, `title`, `price`, `discount`, `image_product`, `description` FROM `product`';
-            $result = $conn->query($sql);
-        ?>
-        <section id="shoes" class="my-5">
+        <!-- clothes -->
+        <section id="featured" class="my-5">
             <div class="container text-center mt-5 py-5">
-                <h3>Lamps</h3>
+                <h3>Dresses & Coast</h3>
                 <hr class="mx-auto" />
-                <p>Here you can check out our amazing lamp</p>
+                <p>Here you can check out our amazing clothes</p>
             </div>
             <div class="row mx-auto container-fluid">
-                <?php
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo '<div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                                <img
-                                    src="assets/img/' . htmlspecialchars($row['image_product']) . '"
-                                    alt="' . htmlspecialchars($row['title']) . '"
-                                    class="img-fluid mb-3"
-                                />
-                                <div class="star">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <h5 class="p-name">' . htmlspecialchars($row['title']) . '</h5>
-                                <h4 class="p-price">$' . htmlspecialchars($row['price']) . '</h4>
-                                <button class="buy-btn">Buy Now</button>
-                            </div>';
-                    }
-                } else {
-                    echo '<p>No products found.</p>';
-                }
-                ?>
+                <!-- 1 -->
+                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+                    <img
+                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
+                        alt=""
+                        class="img-fluid mb-3"
+                    />
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Sports Shoes</h5>
+                    <h4 class="p-price">$199.8</h4>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+                <!-- 2 -->
+                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+                    <img
+                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
+                        alt=""
+                        class="img-fluid mb-3"
+                    />
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Sports Shoes</h5>
+                    <h4 class="p-price">$199.8</h4>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+
+                <!-- 3 -->
+                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+                    <img
+                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
+                        alt=""
+                        class="img-fluid mb-3"
+                    />
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Sports Shoes</h5>
+                    <h4 class="p-price">$199.8</h4>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+
+                <!-- 4 -->
+                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+                    <img
+                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
+                        alt=""
+                        class="img-fluid mb-3"
+                    />
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Sports Shoes</h5>
+                    <h4 class="p-price">$199.8</h4>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
             </div>
-                       
+        </section>
+
+        <!-- Watches -->
+        <section id="watches" class="my-5">
+            <div class="container text-center mt-5 py-5">
+                <h3>Best watches</h3>
+                <hr class="mx-auto" />
+                <p>Checkout our unique watches</p>
+            </div>
+            <div class="row mx-auto container-fluid">
+                <!-- 1 -->
+                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+                    <img
+                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
+                        alt=""
+                        class="img-fluid mb-3"
+                    />
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Sports Shoes</h5>
+                    <h4 class="p-price">$199.8</h4>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+                <!-- 2 -->
+                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+                    <img
+                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
+                        alt=""
+                        class="img-fluid mb-3"
+                    />
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Sports Shoes</h5>
+                    <h4 class="p-price">$199.8</h4>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+
+                <!-- 3 -->
+                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+                    <img
+                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
+                        alt=""
+                        class="img-fluid mb-3"
+                    />
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Sports Shoes</h5>
+                    <h4 class="p-price">$199.8</h4>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+
+                <!-- 4 -->
+                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+                    <img
+                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
+                        alt=""
+                        class="img-fluid mb-3"
+                    />
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Sports Shoes</h5>
+                    <h4 class="p-price">$199.8</h4>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shoes -->
+        <section id="shoes" class="my-5">
+            <div class="container text-center mt-5 py-5">
+                <h3>Shoes</h3>
+                <hr class="mx-auto" />
+                <p>Here you can check out our amazing shoes</p>
+            </div>
+            <div class="row mx-auto container-fluid">
+                <!-- 1 -->
+                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+                    <img
+                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
+                        alt=""
+                        class="img-fluid mb-3"
+                    />
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Sports Shoes</h5>
+                    <h4 class="p-price">$199.8</h4>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+                <!-- 2 -->
+                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+                    <img
+                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
+                        alt=""
+                        class="img-fluid mb-3"
+                    />
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Sports Shoes</h5>
+                    <h4 class="p-price">$199.8</h4>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+
+                <!-- 3 -->
+                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+                    <img
+                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
+                        alt=""
+                        class="img-fluid mb-3"
+                    />
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Sports Shoes</h5>
+                    <h4 class="p-price">$199.8</h4>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+
+                <!-- 4 -->
+                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+                    <img
+                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
+                        alt=""
+                        class="img-fluid mb-3"
+                    />
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Sports Shoes</h5>
+                    <h4 class="p-price">$199.8</h4>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
             </div>
         </section>
 

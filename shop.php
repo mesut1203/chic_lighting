@@ -73,6 +73,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Blog</a>
                         </li>
+<<<<<<< HEAD:shop.php
 
                         <?php 
                             session_start();
@@ -96,6 +97,19 @@
                                 echo  "</li>";
                             }
                         ?>
+=======
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="cart.html">
+                                <i class="fas fa-solid fa-cart-shopping"></i>
+                            </a>
+                            <a href="account.html">
+                                <i class="fas fa-solid fa-user"></i>
+                            </a>
+                        </li>
+>>>>>>> 4eaf9810485b9a7f34d11ec87a02c0730414b423:shop.html
                     </ul>
                 </div>
             </div>
@@ -114,155 +128,6 @@
                     onclick="window.location.href='single_product.html';"
                     class="product text-center col-lg-3 col-md-4 col-sm-12"
                 >
-                    <img
-                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
-                        alt=""
-                        class="img-fluid mb-3"
-                    />
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h5 class="p-name">Sports Shoes</h5>
-                    <h4 class="p-price">$199.8</h4>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
-                <!-- 2 -->
-                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                    <img
-                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
-                        alt=""
-                        class="img-fluid mb-3"
-                    />
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h5 class="p-name">Sports Shoes</h5>
-                    <h4 class="p-price">$199.8</h4>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
-
-                <!-- 3 -->
-                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                    <img
-                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
-                        alt=""
-                        class="img-fluid mb-3"
-                    />
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h5 class="p-name">Sports Shoes</h5>
-                    <h4 class="p-price">$199.8</h4>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
-
-                <!-- 4 -->
-                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                    <img
-                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
-                        alt=""
-                        class="img-fluid mb-3"
-                    />
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h5 class="p-name">Sports Shoes</h5>
-                    <h4 class="p-price">$199.8</h4>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
-
-                <!-- 1 -->
-                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                    <img
-                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
-                        alt=""
-                        class="img-fluid mb-3"
-                    />
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h5 class="p-name">Sports Shoes</h5>
-                    <h4 class="p-price">$199.8</h4>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
-                <!-- 2 -->
-                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                    <img
-                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
-                        alt=""
-                        class="img-fluid mb-3"
-                    />
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h5 class="p-name">Sports Shoes</h5>
-                    <h4 class="p-price">$199.8</h4>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
-
-                <!-- 3 -->
-                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                    <img
-                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
-                        alt=""
-                        class="img-fluid mb-3"
-                    />
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h5 class="p-name">Sports Shoes</h5>
-                    <h4 class="p-price">$199.8</h4>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
-
-                <!-- 4 -->
-                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                    <img
-                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
-                        alt=""
-                        class="img-fluid mb-3"
-                    />
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h5 class="p-name">Sports Shoes</h5>
-                    <h4 class="p-price">$199.8</h4>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
-                <!-- 1 -->
-                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
                     <img
                         src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
                         alt=""

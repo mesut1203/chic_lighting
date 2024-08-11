@@ -57,15 +57,17 @@
                         <li class="nav-item">
                             <a class="nav-link" href="shop.html">Shop</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Blog</a>
-                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact Us</a>
                         </li>
                         <li class="nav-item">
-                            <i class="fas fa-solid fa-cart-shopping"></i>
-                            <i class="fas fa-solid fa-user"></i>
+                            <a href="cart.html">
+                                <i class="fas fa-solid fa-cart-shopping"></i>
+                            </a>
+                            <a href="account.html">
+                                <i class="fas fa-solid fa-user"></i>
+                            </a>
                         </li>
                     </ul>
                 </div>
