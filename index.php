@@ -64,7 +64,7 @@
                             <a href="cart.html">
                                 <i class="fas fa-solid fa-cart-shopping"></i>
                             </a>
-                            <a href="account.html">
+                            <a href="register.html">
                                 <i class="fas fa-solid fa-user"></i>
                             </a>
                         </li>
