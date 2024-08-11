@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Login</title>
+        <title>Document</title>
         <!-- Bootstrap -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -47,15 +47,40 @@
                 >
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="shop.html">Shop</a>
+                            <a class="nav-link" href="shop.php">Shop</a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="#">Blog</a>
                         </li>
+<<<<<<< HEAD:cart.php
+
+                        <?php 
+                            session_start();
+                            if(isset($_SESSION['email'])){
+                                echo "<form method='post' action='logout.php'>";
+                               echo "<li class='nav-item'>";
+                               echo  "<a href='cart.php'>";
+                               echo  "<i class='fas fa-solid fa-cart-shopping'></i>";
+                               echo   "</a>" ;
+                               echo  "<a href='register.php'>";
+                               echo "<i class='fas fa-solid fa-user'></i>" ;
+                               echo "</a>";
+                               echo "Hello " . $_SESSION['name'] . "<button class='logout' type='submit' name='logout'>Log out</button>";;
+                                echo "</li>";
+                                echo "</form>";
+                            }
+                            else {
+                                echo "<li class='nav-item'>";
+                                echo "<a href='cart.php'>" . "<i class='fas fa-solid fa-cart-shopping'></i>" . "</a>";
+                                echo "<a href='login.php'>" . "<i class='fas fa-solid fa-user'></i>" . "</a>";
+                                echo  "</li>";
+                            }
+                        ?>
+=======
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact Us</a>
                         </li>
@@ -63,75 +88,24 @@
                             <i class="fas fa-solid fa-cart-shopping"></i>
                             <i class="fas fa-solid fa-user"></i>
                         </li>
+>>>>>>> 4eaf9810485b9a7f34d11ec87a02c0730414b423:cart.html
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <!-- Account -->
-        <section class="my-5 py-5">
-            <div class="row container mx-auto">
-                <div class="text-center mt-3 pt-5 col-lg-6 col-md-12 col-sm-12">
-                    <h3 class="font-weight-bold">Account info</h3>
-                    <hr class="mx-auto" />
-                    <div class="account-info">
-                        <p>Name<span>John</span></p>
-                        <p>Email<span>john@email.com</span></p>
-                        <p><a href="" id="order-btn">Your orders</a></p>
-                        <p><a href="" id="logout-btn">Logout</a></p>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-md-12 col-sm-12">
-                    <form id="account-form">
-                        <h3>Change Password</h3>
-                        <hr class="mx-auto" />
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input
-                                type="password"
-                                class="form-control"
-                                id="account-password"
-                                name="password"
-                                placeholder="Password"
-                                required
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label>Confirm Password</label>
-                            <input
-                                type="password"
-                                class="form-control"
-                                id="account-password-confirm"
-                                name="confirmPassword"
-                                placeholder="Confirm Password"
-                                required
-                            />
-                        </div>
-                        <div class="form-group">
-                            <input
-                                type="submit"
-                                class="btn"
-                                id="change-pass-btn"
-                                value="Change Password"
-                            />
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- Orders -->
-        <section class="orders container my-5 py-3">
-            <div class="container mt-2">
-                <h2 class="font-weight-bold text-center">Your orders</h2>
-                <hr class="mx-auto" />
+        <!-- Cart -->
+        <section class="cart container my-5 py-5">
+            <div class="container mt-5">
+                <h2 class="font-weight-bolde">Your cart</h2>
+                <hr />
             </div>
 
             <table class="mt-5 pt-5">
                 <tr>
                     <th>Product</th>
-                    <th>Date</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
                 </tr>
                 <tr>
                     <td>
@@ -140,17 +114,97 @@
                                 src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
                                 alt=""
                             />
-                            <div>
-                                <p class="mt-3">White Shoes</p>
+                            <div class="">
+                                <p>White Shoes</p>
+                                <small><span>$</span>155</small>
+                                <br />
+                                <a href="#" class="remove-btn">Remove</a>
                             </div>
                         </div>
                     </td>
 
                     <td>
-                        <span>2026-05-08</span>
+                        <input type="number" value="1" />
+                        <a href="#" class="edit-btn">Edit</a>
+                    </td>
+
+                    <td>
+                        <span>$</span>
+                        <span class="product-price">155</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="product-info">
+                            <img
+                                src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
+                                alt=""
+                            />
+                            <div class="">
+                                <p>White Shoes</p>
+                                <small><span>$</span>155</small>
+                                <br />
+                                <a href="#" class="remove-btn">Remove</a>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td>
+                        <input type="number" value="1" />
+                        <a href="#" class="edit-btn">Edit</a>
+                    </td>
+
+                    <td>
+                        <span>$</span>
+                        <span class="product-price">155</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="product-info">
+                            <img
+                                src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
+                                alt=""
+                            />
+                            <div class="">
+                                <p>White Shoes</p>
+                                <small><span>$</span>155</small>
+                                <br />
+                                <a href="#" class="remove-btn">Remove</a>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td>
+                        <input type="number" value="1" />
+                        <a href="#" class="edit-btn">Edit</a>
+                    </td>
+
+                    <td>
+                        <span>$</span>
+                        <span class="product-price">155</span>
                     </td>
                 </tr>
             </table>
+
+            <div class="cart-total">
+                <table>
+                    <tr>
+                        <td>Subtotal</td>
+                        <td>$155</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>$155</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="checkout-container">
+                <button class="btn checkout-btn">Checkout</button>
+            </div>
         </section>
 
         <!-- footer -->

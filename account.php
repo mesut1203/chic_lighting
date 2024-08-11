@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Home</title>
+        <title>Login</title>
         <!-- Bootstrap -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -47,36 +47,103 @@
                 >
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="shop.html">Shop</a>
+                            <a class="nav-link" href="shop.php">Shop</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="#">Blog</a>
                         </li>
+<<<<<<< HEAD:account.php
+
+                        <?php 
+                            session_start();
+                            if(isset($_SESSION['email'])){
+                                echo "<form method='post' action='logout.php'>";
+                               echo "<li class='nav-item'>";
+                               echo  "<a href='cart.php'>";
+                               echo  "<i class='fas fa-solid fa-cart-shopping'></i>";
+                               echo   "</a>" ;
+                               echo  "<a href='register.php'>";
+                               echo "<i class='fas fa-solid fa-user'></i>" ;
+                               echo "</a>";
+                               echo "Hello " . $_SESSION['name'] . "<button class='logout' type='submit' name='logout'>Log out</button>";;
+                                echo "</li>";
+                                echo "</form>";
+                            }
+                            else {
+                                echo "<li class='nav-item'>";
+                                echo "<a href='cart.php'>" . "<i class='fas fa-solid fa-cart-shopping'></i>" . "</a>";
+                                echo "<a href='login.php'>" . "<i class='fas fa-solid fa-user'></i>" . "</a>";
+                                echo  "</li>";
+                            }
+                        ?>
+=======
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact Us</a>
                         </li>
                         <li class="nav-item">
                             <i class="fas fa-solid fa-cart-shopping"></i>
-                            <a href="register.html"><i class="fas fa-solid fa-user"></i><a/>
+                            <i class="fas fa-solid fa-user"></i>
                         </li>
+>>>>>>> 4eaf9810485b9a7f34d11ec87a02c0730414b423:account.html
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <!-- Contact -->
-        <section id="contact" class="container my-5 py-5">
-            <div class="container text-center mt-5">
-                <h3>Contact Us</h3>
-                <hr class="mx-auto" />
-                <p class="w-50 mx-auto">Phone number: 0335390018</p>
-                <p class="w-50 mx-auto">
-                    Email Address: <span>info@gmail.com</span>
-                </p>
-                <p class="w-50 mx-auto">We work 24/7 to answer your question</p>
+        <!-- Account -->
+        <section class="my-5 py-5">
+            <div class="row container mx-auto">
+                <div class="text-center mt-3 pt-5 col-lg-6 col-md-12 col-sm-12">
+                    <h3 class="font-weight-bold">Account info</h3>
+                    <hr class="mx-auto" />
+                    <div class="account-info">
+                        <p>Name<span>John</span></p>
+                        <p>Email<span>john@email.com</span></p>
+                        <p><a href="cart.html" id="order-btn">Your orders</a></p>
+                        <p><a href="" id="logout-btn">Logout</a></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <form id="account-form">
+                        <h3>Change Password</h3>
+                        <hr class="mx-auto" />
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input
+                                type="password"
+                                class="form-control"
+                                id="account-password"
+                                name="password"
+                                placeholder="Password"
+                                required
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input
+                                type="password"
+                                class="form-control"
+                                id="account-password-confirm"
+                                name="confirmPassword"
+                                placeholder="Confirm Password"
+                                required
+                            />
+                        </div>
+                        <div class="form-group">
+                            <input
+                                type="submit"
+                                class="btn"
+                                id="change-pass-btn"
+                                value="Change Password"
+                            />
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
 
@@ -146,7 +213,6 @@
                 </div>
             </div>
         </footer>
-
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

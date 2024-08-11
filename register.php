@@ -47,14 +47,39 @@
                 >
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="shop.html">Shop</a>
+                            <a class="nav-link" href="shop.php">Shop</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Blog</a>
                         </li>
+<<<<<<< HEAD:register.php
+
+                        <?php 
+                            session_start();
+                            if(isset($_SESSION['email'])){
+                                echo "<form method='post' action='logout.php'>";
+                               echo "<li class='nav-item'>";
+                               echo  "<a href='cart.php'>";
+                               echo  "<i class='fas fa-solid fa-cart-shopping'></i>";
+                               echo   "</a>" ;
+                               echo  "<a href='register.php'>";
+                               echo "<i class='fas fa-solid fa-user'></i>" ;
+                               echo "</a>";
+                               echo "Hello " . $_SESSION['name'] . "<button class='logout' type='submit' name='logout'>Log out</button>";;
+                                echo "</li>";
+                                echo "</form>";
+                            }
+                            else {
+                                echo "<li class='nav-item'>";
+                                echo "<a href='cart.php'>" . "<i class='fas fa-solid fa-cart-shopping'></i>" . "</a>";
+                                echo "<a href='login.php'>" . "<i class='fas fa-solid fa-user'></i>" . "</a>";
+                                echo  "</li>";
+                            }
+                        ?>
+=======
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact Us</a>
                         </li>
@@ -62,11 +87,11 @@
                             <i class="fas fa-solid fa-cart-shopping"></i>
                             <i class="fas fa-solid fa-user"></i>
                         </li>
+>>>>>>> 4eaf9810485b9a7f34d11ec87a02c0730414b423:register.html
                     </ul>
                 </div>
             </div>
         </nav>
-
         <!-- Register -->
         <section class="my-5 py-5">
             <div class="container text-center mt-3 pt-5">
@@ -128,7 +153,7 @@
                         />
                     </div>
                     <div class="form-group">
-                        <a href="#" id="login-url" class="btn">
+                        <a href="login.html" id="login-url" class="btn">
                             Do you have an account? Login
                         </a>
                     </div>
