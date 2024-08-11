@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Home</title>
+        <title>Document</title>
         <!-- Bootstrap -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -47,36 +47,152 @@
                 >
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="shop.html">Shop</a>
+                            <a class="nav-link" href="shop.php">Shop</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Blog</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <i class="fas fa-solid fa-cart-shopping"></i>
-                            <a href="register.html"><i class="fas fa-solid fa-user"></i><a/>
-                        </li>
+
+                        <?php 
+                            session_start();
+                            if(isset($_SESSION['email'])){
+                                echo "<form method='post' action='logout.php'>";
+                               echo "<li class='nav-item'>";
+                               echo  "<a href='cart.php'>";
+                               echo  "<i class='fas fa-solid fa-cart-shopping'></i>";
+                               echo   "</a>" ;
+                               echo  "<a href='register.php'>";
+                               echo "<i class='fas fa-solid fa-user'></i>" ;
+                               echo "</a>";
+                               echo "Hello " . $_SESSION['name'] . "<button class='logout' type='submit' name='logout'>Log out</button>";;
+                                echo "</li>";
+                                echo "</form>";
+                            }
+                            else {
+                                echo "<li class='nav-item'>";
+                                echo "<a href='cart.php'>" . "<i class='fas fa-solid fa-cart-shopping'></i>" . "</a>";
+                                echo "<a href='login.php'>" . "<i class='fas fa-solid fa-user'></i>" . "</a>";
+                                echo  "</li>";
+                            }
+                        ?>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <!-- Contact -->
-        <section id="contact" class="container my-5 py-5">
-            <div class="container text-center mt-5">
-                <h3>Contact Us</h3>
-                <hr class="mx-auto" />
-                <p class="w-50 mx-auto">Phone number: 0335390018</p>
-                <p class="w-50 mx-auto">
-                    Email Address: <span>info@gmail.com</span>
-                </p>
-                <p class="w-50 mx-auto">We work 24/7 to answer your question</p>
+        <!-- Cart -->
+        <section class="cart container my-5 py-5">
+            <div class="container mt-5">
+                <h2 class="font-weight-bolde">Your cart</h2>
+                <hr />
+            </div>
+
+            <table class="mt-5 pt-5">
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="product-info">
+                            <img
+                                src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
+                                alt=""
+                            />
+                            <div class="">
+                                <p>White Shoes</p>
+                                <small><span>$</span>155</small>
+                                <br />
+                                <a href="#" class="remove-btn">Remove</a>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td>
+                        <input type="number" value="1" />
+                        <a href="#" class="edit-btn">Edit</a>
+                    </td>
+
+                    <td>
+                        <span>$</span>
+                        <span class="product-price">155</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="product-info">
+                            <img
+                                src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
+                                alt=""
+                            />
+                            <div class="">
+                                <p>White Shoes</p>
+                                <small><span>$</span>155</small>
+                                <br />
+                                <a href="#" class="remove-btn">Remove</a>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td>
+                        <input type="number" value="1" />
+                        <a href="#" class="edit-btn">Edit</a>
+                    </td>
+
+                    <td>
+                        <span>$</span>
+                        <span class="product-price">155</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="product-info">
+                            <img
+                                src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
+                                alt=""
+                            />
+                            <div class="">
+                                <p>White Shoes</p>
+                                <small><span>$</span>155</small>
+                                <br />
+                                <a href="#" class="remove-btn">Remove</a>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td>
+                        <input type="number" value="1" />
+                        <a href="#" class="edit-btn">Edit</a>
+                    </td>
+
+                    <td>
+                        <span>$</span>
+                        <span class="product-price">155</span>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="cart-total">
+                <table>
+                    <tr>
+                        <td>Subtotal</td>
+                        <td>$155</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>$155</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="checkout-container">
+                <button class="btn checkout-btn">Checkout</button>
             </div>
         </section>
 
@@ -146,7 +262,6 @@
                 </div>
             </div>
         </footer>
-
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

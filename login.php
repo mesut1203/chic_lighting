@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Login</title>
         <!-- Bootstrap -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -24,10 +24,18 @@
         />
     </head>
     <body>
+        <?php
+            session_start();
+
+            // If already logged in as 'email_khach_hang' or 'tai_khoan', redirect to home page
+            if (isset($_SESSION['email'])) {
+                header("Location: index.php");
+                exit();
+            }
+        ?>
+
         <!-- Navbar  -->
-        <nav
-            class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top"
-        >
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
             <div class="container">
                 <img src="./assets/img/Logo.svg" alt="" class="logo" />
                 <button
@@ -41,10 +49,7 @@
                 >
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div
-                    class="collapse navbar-collapse nav-buttons"
-                    id="navbarSupportedContent"
-                >
+                <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link" href="index.html">Home</a>
@@ -60,124 +65,91 @@
                         </li>
                         <li class="nav-item">
                             <i class="fas fa-solid fa-cart-shopping"></i>
-                            <a href="register.html"><i class="fas fa-solid fa-user"></i><a/>
+                            <i class="fas fa-solid fa-user"></i>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <!-- Cart -->
-        <section class="cart container my-5 py-5">
-            <div class="container mt-5">
-                <h2 class="font-weight-bolde">Your cart</h2>
-                <hr />
+        <!-- Login -->
+        <section class="my-5 py-5">
+            <div class="container text-center mt-3 pt-5">
+                <h2 class="font-weight-bold">Login</h2>
+                <hr class="mx-auto" />
             </div>
-
-            <table class="mt-5 pt-5">
-                <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Subtotal</th>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="product-info">
-                            <img
-                                src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
-                                alt=""
-                            />
-                            <div class="">
-                                <p>White Shoes</p>
-                                <small><span>$</span>155</small>
-                                <br />
-                                <a href="#" class="remove-btn">Remove</a>
-                            </div>
-                        </div>
-                    </td>
-
-                    <td>
-                        <input type="number" value="1" />
-                        <a href="#" class="edit-btn">Edit</a>
-                    </td>
-
-                    <td>
-                        <span>$</span>
-                        <span class="product-price">155</span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <div class="product-info">
-                            <img
-                                src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
-                                alt=""
-                            />
-                            <div class="">
-                                <p>White Shoes</p>
-                                <small><span>$</span>155</small>
-                                <br />
-                                <a href="#" class="remove-btn">Remove</a>
-                            </div>
-                        </div>
-                    </td>
-
-                    <td>
-                        <input type="number" value="1" />
-                        <a href="#" class="edit-btn">Edit</a>
-                    </td>
-
-                    <td>
-                        <span>$</span>
-                        <span class="product-price">155</span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <div class="product-info">
-                            <img
-                                src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
-                                alt=""
-                            />
-                            <div class="">
-                                <p>White Shoes</p>
-                                <small><span>$</span>155</small>
-                                <br />
-                                <a href="#" class="remove-btn">Remove</a>
-                            </div>
-                        </div>
-                    </td>
-
-                    <td>
-                        <input type="number" value="1" />
-                        <a href="#" class="edit-btn">Edit</a>
-                    </td>
-
-                    <td>
-                        <span>$</span>
-                        <span class="product-price">155</span>
-                    </td>
-                </tr>
-            </table>
-
-            <div class="cart-total">
-                <table>
-                    <tr>
-                        <td>Subtotal</td>
-                        <td>$155</td>
-                    </tr>
-                    <tr>
-                        <td>Total</td>
-                        <td>$155</td>
-                    </tr>
-                </table>
+            <div class="mx-auto container">
+                <form id="login-form" method="post">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="login-email"
+                            name="email"
+                            placeholder="Email"
+                            required
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input
+                            type="password"
+                            class="form-control"
+                            id="login-password"
+                            name="password"
+                            placeholder="Password"
+                            required
+                        />
+                    </div>
+                    <div class="form-group">
+                        <input
+                            type="submit"
+                            class="form-control"
+                            id="login-btn"
+                            value="Login"
+                            name="login"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <a href="register.html" id="register-url" class="btn">
+                            Don't have an account? Register
+                        </a>
+                    </div>
+                </form>
             </div>
+        </section>
 
-            <div class="checkout-container">
-                <button class="btn checkout-btn">Checkout</button>
-            </div>
+        <?php
+        // Handle form submission
+        if (isset($_POST['login'])) {
+            require 'server/connection.php';
+            $email = $_POST['email'];
+            $pass = $_POST['password'];
+
+            // Prepare and bind
+            $stmt = $conn->prepare("SELECT `user_id`, `name`, `email`, `password`, `role_id` FROM `user` WHERE `email` = ? AND `password` = ?");
+            $stmt->bind_param("ss", $email, $pass);
+            $stmt->execute();
+            $result_customer = $stmt->get_result();
+
+            if ($result_customer->num_rows > 0) {
+                $row = $result_customer->fetch_assoc();
+                $_SESSION['email'] = $row['email'];
+                $_SESSION['password'] = $row['password'];
+                $_SESSION['name'] = $row['name'];
+                $_SESSION['user_id'] = $row['user_id'];
+                $_SESSION['role_id'] = $row['role_id'];
+                exit();
+            } else {
+                $error_message = "Invalid email or password.";
+            }
+
+            $stmt->close();
+            $conn->close();
+        }
+        ?>
+
         </section>
 
         <!-- footer -->

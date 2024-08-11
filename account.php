@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Login</title>
         <!-- Bootstrap -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -47,92 +47,92 @@
                 >
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="shop.html">Shop</a>
+                            <a class="nav-link" href="shop.php">Shop</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Blog</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <i class="fas fa-solid fa-cart-shopping"></i>
-                            <a href="register.html"><i class="fas fa-solid fa-user"></i><a/>
-                        </li>
+
+                        <?php 
+                            session_start();
+                            if(isset($_SESSION['email'])){
+                                echo "<form method='post' action='logout.php'>";
+                               echo "<li class='nav-item'>";
+                               echo  "<a href='cart.php'>";
+                               echo  "<i class='fas fa-solid fa-cart-shopping'></i>";
+                               echo   "</a>" ;
+                               echo  "<a href='register.php'>";
+                               echo "<i class='fas fa-solid fa-user'></i>" ;
+                               echo "</a>";
+                               echo "Hello " . $_SESSION['name'] . "<button class='logout' type='submit' name='logout'>Log out</button>";;
+                                echo "</li>";
+                                echo "</form>";
+                            }
+                            else {
+                                echo "<li class='nav-item'>";
+                                echo "<a href='cart.php'>" . "<i class='fas fa-solid fa-cart-shopping'></i>" . "</a>";
+                                echo "<a href='login.php'>" . "<i class='fas fa-solid fa-user'></i>" . "</a>";
+                                echo  "</li>";
+                            }
+                        ?>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <!-- Register -->
+        <!-- Account -->
         <section class="my-5 py-5">
-            <div class="container text-center mt-3 pt-5">
-                <h2 class="from-weight-bold">Register</h2>
-                <hr class="mx-auto" />
-            </div>
-            <div class="mx-auto container">
-                <form id="register-form">
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="register-name"
-                            name="name"
-                            placeholder="Name"
-                            required
-                        />
+            <div class="row container mx-auto">
+                <div class="text-center mt-3 pt-5 col-lg-6 col-md-12 col-sm-12">
+                    <h3 class="font-weight-bold">Account info</h3>
+                    <hr class="mx-auto" />
+                    <div class="account-info">
+                        <p>Name<span>John</span></p>
+                        <p>Email<span>john@email.com</span></p>
+                        <p><a href="cart.html" id="order-btn">Your orders</a></p>
+                        <p><a href="" id="logout-btn">Logout</a></p>
                     </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="register-email"
-                            name="email"
-                            placeholder="Email"
-                            required
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input
-                            type="password"
-                            class="form-control"
-                            id="register-password"
-                            name="password"
-                            placeholder="Password"
-                            required
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label>Confirm Password</label>
-                        <input
-                            type="password"
-                            class="form-control"
-                            id="register-confirm-password"
-                            name="confirmPassword"
-                            placeholder="Confirm Password"
-                            required
-                        />
-                    </div>
-                    <div class="form-group">
-                        <input
-                            type="submit"
-                            class="form-control"
-                            id="register-btn"
-                            value="Register"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <a href="#" id="login-url" class="btn">
-                            Do you have an account? Login
-                        </a>
-                    </div>
-                </form>
+                </div>
+
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <form id="account-form">
+                        <h3>Change Password</h3>
+                        <hr class="mx-auto" />
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input
+                                type="password"
+                                class="form-control"
+                                id="account-password"
+                                name="password"
+                                placeholder="Password"
+                                required
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input
+                                type="password"
+                                class="form-control"
+                                id="account-password-confirm"
+                                name="confirmPassword"
+                                placeholder="Confirm Password"
+                                required
+                            />
+                        </div>
+                        <div class="form-group">
+                            <input
+                                type="submit"
+                                class="btn"
+                                id="change-pass-btn"
+                                value="Change Password"
+                            />
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
 
