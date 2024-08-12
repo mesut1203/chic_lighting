@@ -102,10 +102,10 @@
                             <a class="nav-link" href="#">Contact Us</a>
                         </li>
                         <li class="nav-item">
-                            <a href="cart.html">
+                            <a href="cart.php">
                                 <i class="fas fa-solid fa-cart-shopping"></i>
                             </a>
-                            <a href="account.html">
+                            <a href="account.php">
                                 <i class="fas fa-solid fa-user"></i>
                             </a>
                         </li>
@@ -125,7 +125,7 @@
             <div class="row mx-auto container">
                 <!-- 1 -->
                 <div
-                    onclick="window.location.href='single_product.html';"
+                    onclick="window.location.href='single_product.php';"
                     class="product text-center col-lg-3 col-md-4 col-sm-12"
                 >
                     <img

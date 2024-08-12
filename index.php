@@ -84,10 +84,10 @@
                             <a class="nav-link" href="#">Contact Us</a>
                         </li>
                         <li class="nav-item">
-                            <a href="cart.html">
+                            <a href="cart.php">
                                 <i class="fas fa-solid fa-cart-shopping"></i>
                             </a>
-                            <a href="register.html">
+                            <a href="login.php">
                                 <i class="fas fa-solid fa-user"></i>
                             </a>
                         </li>
