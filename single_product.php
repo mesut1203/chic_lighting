@@ -53,7 +53,6 @@
                             <a class="nav-link" href="shop.php">Shop</a>
                         </li>
                         <li class="nav-item">
-<<<<<<< HEAD:single_product.php
                             <a class="nav-link" href="#">Blog</a>
                         </li>
 
@@ -79,14 +78,6 @@
                                 echo  "</li>";
                             }
                         ?>
-=======
-                            <a class="nav-link" href="#">Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <i class="fas fa-solid fa-cart-shopping"></i>
-                            <a href="register.html"><i class="fas fa-solid fa-user"></i><a/>
-                        </li>
->>>>>>> 4eaf9810485b9a7f34d11ec87a02c0730414b423:single_product.html
                     </ul>
                 </div>
             </div>

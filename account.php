@@ -56,7 +56,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Blog</a>
                         </li>
-<<<<<<< HEAD:account.php
 
                         <?php 
                             session_start();
@@ -80,15 +79,6 @@
                                 echo  "</li>";
                             }
                         ?>
-=======
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <i class="fas fa-solid fa-cart-shopping"></i>
-                            <i class="fas fa-solid fa-user"></i>
-                        </li>
->>>>>>> 4eaf9810485b9a7f34d11ec87a02c0730414b423:account.html
                     </ul>
                 </div>
             </div>
