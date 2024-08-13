@@ -96,6 +96,7 @@
                                 echo  "</li>";
                             }
                         ?>
+
                     </ul>
                 </div>
             </div>
@@ -111,7 +112,7 @@
             <div class="row mx-auto container">
                 <!-- 1 -->
                 <div
-                    onclick="window.location.href='single_product.html';"
+                    onclick="window.location.href='single_product.php';"
                     class="product text-center col-lg-3 col-md-4 col-sm-12"
                 >
                     <img
