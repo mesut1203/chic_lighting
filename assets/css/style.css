@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-.nav-buttons {
-    margin-left: 60%;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -43,7 +39,7 @@ h6 {
     color: #d8d8d8;
 }
 
-button {
+button, .logout {
     font-size: 0.8rem;
     font-weight: 900;
     outline: none;
@@ -55,17 +51,8 @@ button {
     cursor: pointer;
     transition: 0.5s ease;
 }
-.logout{
-    outline: none;
-    border: none;
-    background-color: #1d1d1d;
-    color: aliceblue;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: 0.5s ease;
-}
 
-button:hover {
+button:hover, .logout:hover {
     background-color: coral;
 }
 
@@ -86,7 +73,6 @@ button:hover {
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
-.navbar i:hover,
 .navbar-light .navbar-nav .nav-link.active,
 .navbar i:hover {
     color: coral;
@@ -96,9 +82,12 @@ button:hover {
     font-size: 1.2rem;
     padding: 0 0.7px;
     transition: 0.4s ease;
-    /* font-weight: 500; */
     cursor: pointer;
     margin-left: 5px;
+}
+
+.nav-buttons {
+    margin-left: 60%;
 }
 
 @media only screen and (max-width: 999px) {
@@ -117,13 +106,13 @@ button:hover {
     }
 }
 
+/* Home Section */
 #home {
     background-image: url(https://assets.wfcdn.com/im/23632584/compr-r85/4973/49733143/orrstown-adjustable-metal-desk-lamp.jpg);
     width: 100%;
     height: 100vh;
     background-size: cover;
-    background-position-x: 200px;
-    background-position-y: 80px;
+    background-position: 200px 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -134,7 +123,7 @@ button:hover {
     color: coral;
 }
 
-/* New */
+/* New Section */
 #new .one img {
     width: 100%;
     height: 100%;
@@ -188,7 +177,7 @@ button:hover {
     text-align: end;
 }
 
-/* product  */
+/* Product Section */
 .product {
     cursor: pointer;
     margin-bottom: 2rem;
@@ -214,10 +203,10 @@ button:hover {
     opacity: 1;
 }
 
+/* Common Styles */
 hr {
     width: 30px;
     height: 3px !important;
-    opacity: 1 !important;
     background-color: #fb774b;
 }
 
@@ -230,14 +219,13 @@ hr {
     color: goldenrod;
 }
 
-/* banner */
+/* Banner */
 #banner {
     background-image: url(https://assets.wfcdn.com/im/23632584/compr-r85/4973/49733143/orrstown-adjustable-metal-desk-lamp.jpg);
     width: 100%;
     height: 100vh;
     background-size: cover;
-    background-position-x: center;
-    background-position-y: 80px;
+    background-position: center 80px;
     background-repeat: no-repeat;
     background-attachment: fixed;
     display: flex;
@@ -246,11 +234,7 @@ hr {
     align-items: flex-start;
 }
 
-#banner h1 {
-    color: #fff;
-}
-
-#banner h4 {
+#banner h1, #banner h4 {
     color: #fff;
 }
 
@@ -319,6 +303,7 @@ footer .copyright img {
     height: 48px;
 }
 
+/* Images */
 .small-img-group {
     display: flex;
     justify-content: space-between;
@@ -416,10 +401,7 @@ footer .copyright img {
     border-top: 3px solid #fb774b;
 }
 
-td:last-child {
-    text-align: right;
-}
-
+td:last-child,
 th:last-child {
     text-align: right;
 }
@@ -437,7 +419,7 @@ th:last-child {
 }
 
 /* Login */
-#login-form {
+#login-form, #register-form, #account-form {
     width: 50%;
     margin: 5px auto;
     text-align: center;
@@ -445,68 +427,32 @@ th:last-child {
     border-top: 1px solid #fb774b;
 }
 
-#login-form input {
+#login-form input, 
+#register-form input, 
+#account-form input {
     width: 50%;
     margin: 5px auto;
 }
 
-#login-form #login-btn {
+#login-form #login-btn,
+#register-form #register-btn,
+#account-form #change-pass-btn {
     background-color: #fb774b;
     color: #fff;
 }
 
-#login-form #register-url {
-    color: #fb774b;
-}
-
-/* Register */
-#register-form {
-    width: 50%;
-    margin: 5px auto;
-    text-align: center;
-    padding: 20px;
-    border-top: 1px solid #fb774b;
-}
-
-#register-form input {
-    width: 50%;
-    margin: 5px auto;
-}
-
-#register-form #register-btn {
-    background-color: #fb774b;
-    color: #fff;
-}
-
+#login-form #register-url,
 #register-form #login-url {
     color: #fb774b;
 }
 
-/* Account */
-
-#account-form {
-    width: 50%;
-    margin: 35px auto;
-    text-align: center;
-    padding: 20px;
-}
-
-#account-form input {
-    margin: 5px auto;
-}
-
-#account-form #change-pass-btn {
-    color: #fff;
-    background-color: #fb774b;
-}
-
-.account-info #order-btn,
-#logout-btn {
+#account-form #order-btn,
+#account-form #logout-btn {
     color: #fb774b;
     text-decoration: none;
 }
 
-/* Order */
+/* Orders */
 .orders table {
     width: 100%;
     border-collapse: collapse;

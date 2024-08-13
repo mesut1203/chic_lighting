@@ -1,0 +1,327 @@
+/* Importing Poppins Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* General Reset and Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Font */
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+/* Heading Styles */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+h6 {
+    color: #d8d8d8;
+}
+
+/* Button Styles */
+button {
+    font-size: 0.8rem;
+    font-weight: 900;
+    outline: none;
+    border: none;
+    background-color: #1d1d1d;
+    color: aliceblue;
+    padding: 13px 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+button:hover {
+    background-color: coral;
+}
+
+/* Logout Button */
+.logout {
+    outline: none;
+    border: none;
+    background-color: #1d1d1d;
+    color: aliceblue;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+/* Navbar */
+.navbar {
+    font-size: 16px;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    top: 0;
+    left: 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    padding: 0 20px;
+    color: #000;
+    transition: 0.4s ease;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar i:hover,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar i:hover {
+    color: coral;
+}
+
+.navbar i {
+    font-size: 1.2rem;
+    padding: 0 0.7px;
+    transition: 0.4s ease;
+    /* font-weight: 500; */
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+/* Media Query for Navbar */
+@media only screen and (max-width: 999px) {
+    .nav-buttons {
+        margin: 10px;
+    }
+
+    .nav-buttons ul {
+        margin: 1rem;
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .nav-buttons ul .fas {
+        margin: 20px 5px 10px 20px;
+    }
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    min-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+table caption {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #009879;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+table tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+/* Form and Inputs */
+form input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+form input[type="submit"] {
+    background-color: #009879;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #007f63;
+}
+
+/* Link Styling */
+form a {
+    color: #009879;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+/* Specific Section Styles */
+#home {
+    background-image: url(https://assets.wfcdn.com/im/23632584/compr-r85/4973/49733143/orrstown-adjustable-metal-desk-lamp.jpg);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position-x: 200px;
+    background-position-y: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#home span {
+    color: coral;
+}
+
+/* Other Section Styles */
+#new .one img {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#new .one .details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: burlywood;
+    font-weight: bold;
+    transition: 0.4s ease;
+    opacity: 0.8;
+    background-color: rgb(1, 1, 1);
+    width: 100%;
+    height: 100%;
+}
+
+#new .one .details:hover {
+    background-color: cornsilk;
+}
+
+/* Footer */
+footer {
+    background-color: #222222;
+}
+
+footer h5 {
+    color: #d8d8d8;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+footer li {
+    padding-bottom: 4px;
+}
+
+footer li a {
+    font-size: 0.8rem;
+    color: #999;
+    text-decoration: none;
+}
+
+footer li a:hover {
+    color: #d8d8d8;
+}
+
+footer .copyright a {
+    color: #000;
+    height: 40px;
+    width: 40px;
+    background: #fff;
+    display: inline-block;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+    transition: 0.3s ease;
+    margin: 0 5px;
+}
+
+footer .copyright a:hover {
+    color: #fff;
+    background-color: #fb774b;
+}
+
+footer p {
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+footer .copyright img {
+    width: 30%;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+}
+
+.small-img-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-img-col {
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+.single-product input {
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-style: 16px;
+    margin-right: 10px;
+}
+
+.single-product input:focus {
+    outline: none;
+}
+
+.single-product .buy-btn {
+    background-color: #fb774b;
+    opacity: 1;
+    transition: 0.4s all;
+}
+
+.single-product .buy-btn:hover {
+    background-color: #222222;
+}

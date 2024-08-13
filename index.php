@@ -25,9 +25,7 @@
     </head>
     <body>
         <!-- Navbar  -->
-        <nav
-            class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top"
-        >
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
             <div class="container">
                 <img src="./assets/img/Logo.svg" alt="" class="logo" />
                 <button
@@ -41,10 +39,7 @@
                 >
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div
-                    class="collapse navbar-collapse nav-buttons"
-                    id="navbarSupportedContent"
-                >
+                <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link" href="index.php">Home</a>
@@ -52,31 +47,41 @@
                         <li class="nav-item">
                             <a class="nav-link" href="shop.php">Shop</a>
                         </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Blog</a>
-                        </li>
-
                         <?php 
                             session_start();
-                            if(isset($_SESSION['email'])){
-                                echo "<form method='post' action='logout.php'>";
-                               echo "<li class='nav-item'>";
-                               echo  "<a href='cart.php'>";
-                               echo  "<i class='fas fa-solid fa-cart-shopping'></i>";
-                               echo   "</a>" ;
-                               echo  "<a href='register.php'>";
-                               echo "<i class='fas fa-solid fa-user'></i>" ;
-                               echo "</a>";
-                               echo "Hello " . $_SESSION['name'] . "<button class='logout' type='submit' name='logout'>Log out</button>";;
-                                echo "</li>";
-                                echo "</form>";
-                            }
-                            else {
+                            
+                            if (isset($_SESSION['email'])) {
+                                if ($_SESSION['email'] == 'admin@gmail.com') {
+                                    echo "<li class='nav-item'>";
+                                    echo "<a class='nav-link' href='user.php'>User</a>";
+                                    echo "</li>";
+                                }
+                                else{
+                                    echo "<li class='nav-item'>";
+                                    echo "<a class='nav-link' href='information.php'>Information</a>";
+                                    echo "</li>";
+                                }
                                 echo "<li class='nav-item'>";
-                                echo "<a href='cart.php'>" . "<i class='fas fa-solid fa-cart-shopping'></i>" . "</a>";
-                                echo "<a href='login.php'>" . "<i class='fas fa-solid fa-user'></i>" . "</a>";
-                                echo  "</li>";
+                                echo "<a href='cart.php'>";
+                                echo "<i class='fas fa-solid fa-cart-shopping'></i>";
+                                echo "</a>";
+                                echo "<a href='#'>";
+                                echo "<i class='fas fa-solid fa-user'></i>";
+                                echo "</a>";
+                                echo "Hello " . $_SESSION['name'];
+                                echo "<form method='post' action='logout.php' style='display:inline;'>";
+                                echo "<button class='logout' type='submit' name='logout'>Log out</button>";
+                                echo "</form>";
+                                echo "</li>";
+                            } else {
+                                echo "<li class='nav-item'>";
+                                echo "<a href='cart.php'>";
+                                echo "<i class='fas fa-solid fa-cart-shopping'></i>";
+                                echo "</a>";
+                                echo "<a href='login.php'>";
+                                echo "<i class='fas fa-solid fa-user'></i>";
+                                echo "</a>";
+                                echo "</li>";
                             }
                         ?>
                     </ul>
