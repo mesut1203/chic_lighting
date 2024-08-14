@@ -44,14 +44,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.php">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="shop.php">Shop</a>
-                        </li>
                         <?php 
                             session_start();
                             
                             if (isset($_SESSION['email'])) {
                                 if ($_SESSION['email'] == 'admin@gmail.com') {
+                                    echo "<li class='nav-item'>";
+                                    echo "<a class='nav-link' href='product.php'>Product</a>";
+                                    echo "</li>";
                                     echo "<li class='nav-item'>";
                                     echo "<a class='nav-link' href='user.php'>User</a>";
                                     echo "</li>";

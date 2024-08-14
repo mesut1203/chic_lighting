@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Shop</title>
         <!-- Bootstrap -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -22,6 +22,24 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+
+        <style>
+            .product img {
+                width: 100%;
+                height: auto;
+                box-sizing: border-box;
+                object-fit: cover;
+            }
+
+            .pagination a {
+                color: coral;
+            }
+
+            .pagination li:hover a {
+                color: #fff;
+                background-color: coral;
+            }
+        </style>
     </head>
     <body>
             <!-- Navbar  -->
@@ -90,152 +108,55 @@
                 </div>
             </nav>
 
-        <!-- Single product -->
-        <section class="container single-product my-5 pt-5">
-            <div class="row mt-5">
-                <div class="col-lg-5 col-md-6 col-sm-12">
-                    <img
-                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
-                        alt=""
-                        class="img-fluid w-100 pb-1"
-                        id="mainImg"
-                    />
-                    <div class="small-img-group">
-                        <div class="small-img-col">
-                            <img
-                                src="./assets/img/bradyn-shock-r0KP1Ua9-A4-unsplash.jpg"
-                                width="100%"
-                                alt=""
-                                class="small-img"
-                            />
-                        </div>
-                        <div class="small-img-col">
-                            <img
-                                src="./assets/img/bradyn-shock-r0KP1Ua9-A4-unsplash.jpg"
-                                width="100%"
-                                alt=""
-                                class="small-img"
-                            />
-                        </div>
-                        <div class="small-img-col">
-                            <img
-                                src="./assets/img/bradyn-shock-r0KP1Ua9-A4-unsplash.jpg"
-                                width="100%"
-                                alt=""
-                                class="small-img"
-                            />
-                        </div>
-                        <div class="small-img-col">
-                            <img
-                                src="./assets/img/bradyn-shock-r0KP1Ua9-A4-unsplash.jpg"
-                                width="100%"
-                                alt=""
-                                class="small-img"
-                            />
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-md12 col-12">
-                    <h6>Men/Shoes</h6>
-                    <h3 class="py-4">Men's Fashion</h3>
-                    <h2>155$</h2>
-                    <input type="number" value="1" />
-                    <button class="buy-btn">Add To Cart</button>
-                    <h4>Product details</h4>
-                    <span>
-                        The details of this product will be displayed shortly.
-                        The details of this product will be displayed shortly.
-                        The details of this product will be displayed shortly.
-                        The details of this product will be displayed shortly.
-                        The details of this product will be displayed shortly.
-                    </span>
-                </div>
+        <!-- Featured -->
+        <section id="featured" class="my-5 py-5">
+            <div class="container mt-5 py-5">
+                <h3>Our Product</h3>
+                <hr />
+                <p>Here you can check out our product</p>
             </div>
-        </section>
+            <div class="row mx-auto container">
+                <?php 
+                    require 'server/connection.php';
 
-        <!-- Relative Products -->
-        <section id="relative-products" class="my-5 pb-5">
-            <div class="container text-center mt-5 py-5">
-                <h3>Relative Products</h3>
-                <hr class="mx-auto" />
-                <p>Here you can check out our featured product</p>
-            </div>
-            <div class="row mx-auto container-fluid">
-                <!-- 1 -->
-                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                    <img
-                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
-                        alt=""
-                        class="img-fluid mb-3"
-                    />
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h5 class="p-name">Sports Shoes</h5>
-                    <h4 class="p-price">$199.8</h4>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
-                <!-- 2 -->
-                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                    <img
-                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
-                        alt=""
-                        class="img-fluid mb-3"
-                    />
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h5 class="p-name">Sports Shoes</h5>
-                    <h4 class="p-price">$199.8</h4>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
+                    $sql = "SELECT * FROM `product`";
+                    $result = $conn->query($sql);
 
-                <!-- 3 -->
-                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                    <img
-                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
-                        alt=""
-                        class="img-fluid mb-3"
-                    />
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h5 class="p-name">Sports Shoes</h5>
-                    <h4 class="p-price">$199.8</h4>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<div onclick="window.location.href=\'single_product.php\';" class="product text-center col-lg-3 col-md-4 col-sm-12">';
+                            echo '<img src="./assets/img/' . $row['image_product'] . '" alt="" class="img-fluid mb-3" />';
+                            echo '<div class="star">';
+                            echo '<i class="fas fa-star"></i>';
+                            echo '<i class="fas fa-star"></i>';
+                            echo '<i class="fas fa-star"></i>';
+                            echo '<i class="fas fa-star"></i>';
+                            echo '<i class="fas fa-star"></i>';
+                            echo '</div>';
+                            echo '<h5 class="p-name">' . $row['title'] . '</h5>';
+                            echo '<h4 class="p-price">' . $row['price'] . '</h4>';
+                            
+                            if ($_SESSION['email'] == 'admin@gmail.com') {
+                                echo '<button class="buy-btn">Detail</button>';
+                            } else {
+                                echo '<button class="buy-btn">Buy Now</button>';
+                            }
+                            echo '</div>';
+                        }
+                    }
 
-                <!-- 4 -->
-                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                    <img
-                        src="./assets/img/annie-spratt-J67BWDuNq0U-unsplash.jpg"
-                        alt=""
-                        class="img-fluid mb-3"
-                    />
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h5 class="p-name">Sports Shoes</h5>
-                    <h4 class="p-price">$199.8</h4>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
+                    if ($_SESSION['email'] == 'admin@gmail.com') {
+                        echo '<nav aria-label="Page navigation example">';
+                        echo '<ul class="pagination mt-5">';
+                        echo '<li class="page-item">';
+                        echo '<a href="update_add_delete_product.php" class="page-link">Change Product</a>';
+                        echo '</li>';
+                        echo '</nav>';
+                    } else {
+                        echo "";
+                    }
+                ?>
+
             </div>
         </section>
 
@@ -310,16 +231,5 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"
         ></script>
-
-        <script>
-            var mainImg = document.getElementById("mainImg");
-            var smallImg = document.getElementsByClassName("small-img");
-
-            for (let i = 0; i < 4; i++) {
-                smallImg[0].onclick = function () {
-                    mainImg.src = smallImg[0].src;
-                };
-            }
-        </script>
     </body>
 </html>
