@@ -1,3 +1,40 @@
+<?php
+
+session_start();
+
+
+
+if( !empty($_SESSION['cart']) && isset($_POST['checkout']))  {
+
+// let user in
+
+// send user hom page
+
+}else{
+    header('location: index.php');
+    
+}
+
+
+
+
+
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -52,6 +89,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="shop.html">Shop</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="#">Blog</a>
                         </li>
@@ -67,70 +105,79 @@
             </div>
         </nav>
 
-        <!-- Register -->
+        <!-- Checkout -->
         <section class="my-5 py-5">
             <div class="container text-center mt-3 pt-5">
-                <h2 class="from-weight-bold">Register</h2>
+                <h2 class="from-weight-bold">Check Out</h2>
                 <hr class="mx-auto" />
             </div>
             <div class="mx-auto container">
-                <form id="register-form">
-                    <div class="form-group">
+                <form id="checkout-form" method="post" action="payment.php">
+                    <div class="form-group checkout-small-element">
                         <label>Name</label>
                         <input
                             type="text"
                             class="form-control"
-                            id="register-name"
+                            id="checkout-name"
                             name="name"
                             placeholder="Name"
                             required
                         />
                     </div>
-                    <div class="form-group">
+                    <div class="form-group checkout-small-element">
                         <label>Email</label>
                         <input
                             type="text"
                             class="form-control"
-                            id="register-email"
+                            id="checkout-email"
                             name="email"
                             placeholder="Email"
                             required
                         />
                     </div>
-                    <div class="form-group">
-                        <label>Password</label>
+                    <div class="form-group checkout-small-element">
+                        <label>Phone</label>
                         <input
-                            type="password"
+                            type="tel"
                             class="form-control"
-                            id="register-password"
-                            name="password"
-                            placeholder="Password"
+                            id="checkout-phone"
+                            name="phone"
+                            placeholder="Phone"
                             required
                         />
                     </div>
-                    <div class="form-group">
-                        <label>Confirm Password</label>
+                    <div class="form-group checkout-small-element">
+                        <label>City</label>
                         <input
-                            type="password"
+                            type="text"
                             class="form-control"
-                            id="register-confirm-password"
-                            name="confirmPassword"
-                            placeholder="Confirm Password"
+                            id="checkout-city"
+                            name="city"
+                            placeholder="city"
                             required
                         />
                     </div>
-                    <div class="form-group">
+                    <div class="form-group checkout-large-element">
+                        <label>Address</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="checkout-address"
+                            name="address"
+                            placeholder="Address"
+                            required
+                        />
+                    </div>
+                    <div class="form-group checkout-btn-container">
+                        <p>Total amount:$ <?php echo $_SESSION['total']; ?></p>
                         <input
                             type="submit"
-                            class="form-control"
-                            id="register-btn"
-                            value="Register"
+                            class="btn"
+                            id="checkout-btn"
+                            value="checkout"
+                            name="checkout"
+                        
                         />
-                    </div>
-                    <div class="form-group">
-                        <a href="#" id="login-url" class="btn">
-                            Do you have an account? Login
-                        </a>
                     </div>
                 </form>
             </div>

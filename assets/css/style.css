@@ -383,13 +383,18 @@ footer .copyright img {
 .cart .remove-btn {
     color: #fb774b;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 14px;
+    background-color: #fff;
+    border: none;
+    width: 100%;
 }
 
 .cart .edit-btn {
     color: #fb774b;
     text-decoration: none;
     font-style: 15px;
+    background-color: #fff;
+    border: none;
 }
 
 .cart .product-info p {
@@ -554,4 +559,50 @@ th:last-child {
 /* Contact */
 #contact span {
     color: #fb774b;
+}
+
+/* Feedback */
+#feedback {
+    /* margin-top: 135px; */
+    padding: 96px 0;
+    background: #fb774b;
+}
+
+.feedback-item {
+    display: flex;
+}
+
+.feedback-item .avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.feedback-item .info .title {
+    margin-top: 18px;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 1.42;
+    color: #f7f7f7;
+}
+
+.feedback-item .info .desc {
+    margin-top: 4px;
+    font-size: 1.4rem;
+    line-height: 1.86;
+    color: #f7f7f7;
+}
+
+.feedback-item .content {
+    width: 65%;
+    margin-left: auto;
+}
+
+.feedback-item blockquote {
+    margin-left: 30px;
+    font-style: italic;
+    font-size: 2rem;
+    line-height: 1.54;
+    color: #ffffff;
 }
